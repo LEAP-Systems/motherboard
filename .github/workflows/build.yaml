@@ -19,8 +19,9 @@ jobs:
         curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
     - name: compile source code
       run: |
+        env
         # add to $PATH
-        export PATH=$PATH:/home/runner/work/telemeter/telemeter/bin
+        export PATH=$PATH:/home/runner/work/motherboard/motherboard/bin
         make setup
         make compile mode=ci
     - name: Archive compile artefacts 
