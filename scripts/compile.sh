@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # shellcheck disable=SC1091
-source .env
+if [[ "$1" == "ci" ]]; then
+    source sample.env
+    printf "%b" "${OKG}ci ${OKB}compile config enabled${NC}\n"
+else
+    source .env
+    printf "%b" "${OKG}dev ${OKB}compile config enabled${NC}\n"
+fi
+
 
 trap 'handler $? $LINENO' ERR
 
