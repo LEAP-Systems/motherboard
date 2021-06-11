@@ -3,6 +3,10 @@ name: ci
 
 on:
   push:
+    paths-ignore:
+      - "README.md"
+      - "docs/**"
+      - "hardware/**"
     branches: [ master ]
   pull_request:
     branches: [ master ]
