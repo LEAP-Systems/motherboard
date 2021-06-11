@@ -14,7 +14,7 @@ def demo(ser: serial.Serial) -> None:
             for byte in [[x] for x in range(256)]:
                 print("Loading -> {}".format(byte))
                 ser.write(bytes(byte))
-                time.sleep(0.1)
+                time.sleep(0.001)
     except KeyboardInterrupt:
         sys.exit()
 
