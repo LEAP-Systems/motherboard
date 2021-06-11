@@ -28,9 +28,9 @@ setup: ## configure arduino-cli and install cpplinter
 lint: ## lint with cpplint (Google standards)
 	@./scripts/lint.sh
 
-.PHONY: compile
+.PHONY: compile 
 compile: ## compile source code and save artefactsto the build directory
-	@./scripts/compile.sh
+	@./scripts/compile.sh $(mode)
 
 .PHONY: flash
 flash: ## flash arduino build artefacts to board
